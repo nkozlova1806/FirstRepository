@@ -8,7 +8,7 @@ namespace FruitTests
     [TestClass]
     public class BaseFruitTests
     {
-        [TestMethod]
+        //[TestMethod]
         public void GetFruitsPriceByWeight_10dollars_2kilos_return_20()
         {
         }
