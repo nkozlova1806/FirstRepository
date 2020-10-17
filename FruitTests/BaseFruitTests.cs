@@ -73,7 +73,7 @@ namespace FruitTests
             NUnit.Framework.Assert.AreEqual(expected, actual, $"Expected result is {0}, but actual result was {1}");
         }
 
-        //[TestMethod]
+        [TestMethod]
         public void GetPriceWithTax_PriceAndTax()
         {
             double expected = 5.5;

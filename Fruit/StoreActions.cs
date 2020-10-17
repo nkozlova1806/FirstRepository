@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Fruit
@@ -23,6 +24,11 @@ namespace Fruit
         public List<string> GetFruitsWeightNotGreater(List<BaseFruit> fruitsList, double boundaryWeight)
         {
             return fruitsList.Where(e => e.Weight <= boundaryWeight).Select(e => e.Name).ToList();
+        }
+
+        public int GetAllFruitsAmount(bool v)
+        {
+            throw new NotImplementedException();
         }
 
         public double CalculateBasketPrice(List<BaseFruit> fruitsList)
