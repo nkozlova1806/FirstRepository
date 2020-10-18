@@ -64,7 +64,6 @@ namespace FruitTests
             List<string> expected = new List<string>() { "apple", "banana", "cherry" };
             List<string> actual;
 
-            StoreActions storeActions = new StoreActions();
             List<BaseFruit> list = new List<BaseFruit>();
             
             BasicStoreSet fruitsSet = new BasicStoreSet();
@@ -76,6 +75,8 @@ namespace FruitTests
             list.Add(appleSet);
             list.Add(bananaSet);
             list.Add(cherrySet);
+
+            StoreActions storeActions = new StoreActions();
 
             actual = storeActions.GetFruitsNamesList(list);
             actual.Sort();
@@ -137,6 +138,44 @@ namespace FruitTests
 
             actual = storeActions.GetAllFruitColors(list);
             actual.Sort();
+
+            NUnit.Framework.Assert.AreEqual(expected, actual, $"Expected result is {0}, but actual result was {1}");
+        }
+
+        [TestMethod]
+        public void CalculateBasketPrice_Test()
+        {
+            double actual;
+            double expected = 336;
+
+            StoreActions storeActions = new StoreActions();
+            List<BaseFruit> list = new List<BaseFruit>();
+            BasicStoreSet fruitsSet = new BasicStoreSet();
+            var appleSet = fruitsSet.Apple();
+            var cherrySet = fruitsSet.Cherry();
+            list.Add(appleSet);
+            list.Add(cherrySet);
+
+            actual = storeActions.CalculateBasketPrice(list);
+
+            NUnit.Framework.Assert.AreEqual(expected, actual, $"Expected result is {0}, but actual result was {1}");
+        }
+
+        [TestMethod]
+        public void GetTotalFruitsWeight_Test()
+        {
+            double actual;
+            double expected = 336;
+
+            StoreActions storeActions = new StoreActions();
+            List<BaseFruit> list = new List<BaseFruit>();
+            BasicStoreSet fruitsSet = new BasicStoreSet();
+            var appleSet = fruitsSet.Apple();
+            var cherrySet = fruitsSet.Cherry();
+            list.Add(appleSet);
+            list.Add(cherrySet);
+
+            actual = storeActions.GetTotalFruitsWeight(list);
 
             NUnit.Framework.Assert.AreEqual(expected, actual, $"Expected result is {0}, but actual result was {1}");
         }
